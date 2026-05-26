@@ -1,8 +1,9 @@
 # Domain Data Pipeline
 
-![CI](https://github.com/YOUR_USERNAME/Domain_Data_Pipeline/actions/workflows/pipeline.yml/badge.svg)
-![Python](https://img.shields.io/badge/python-3.10+-blue)
-![Docker](https://img.shields.io/badge/docker-ready-2496ED?logo=docker&logoColor=white)
+[![CI](https://github.com/incastil/Domain_Data_Pipeline/actions/workflows/pipeline.yml/badge.svg)](https://github.com/incastil/Domain_Data_Pipeline/actions/workflows/pipeline.yml)
+[![Python](https://img.shields.io/badge/python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/docker-ready-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 Production-style containerized ETL pipeline with validation enforcement, idempotent loading, and structured logging. Ingests REST API data through a 4-stage pipeline — ingest, transform, validate, load — with fail-fast data quality gates before any data reaches storage.
 
