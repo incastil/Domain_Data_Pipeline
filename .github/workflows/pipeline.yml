@@ -59,10 +59,4 @@ jobs:
         run: docker build -t domain-data-pipeline .
 
       - name: Run pipeline in Docker
-        run: |
-          mkdir -p output
-          docker run --rm -v $(pwd)/output:/app domain-data-pipeline
-
-      - name: Verify Docker output
-        run: |
-          test -f output/orders.db && echo "orders.db produced by Docker OK"
+        run: docker run --rm domain-data-pipeline

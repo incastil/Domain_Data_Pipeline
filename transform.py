@@ -55,6 +55,12 @@ def run() -> pd.DataFrame:
     rows = flatten_carts(data)
     df = pd.DataFrame(rows)
 
+    before = len(df)
+    df = df.drop_duplicates(subset=["order_id", "product_id"])
+    dropped = before - len(df)
+    if dropped:
+        logger.warning("Dropped %d duplicate (order_id, product_id) row(s) from source data", dropped)
+
     logger.info("Transformed %d order-line records", len(df))
     df.to_csv(CLEAN_OUTPUT, index=False)
     logger.info("Clean data written to %s", CLEAN_OUTPUT)
