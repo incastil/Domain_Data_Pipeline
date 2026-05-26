@@ -109,10 +109,13 @@ python main.py
 # Build image
 docker build -t domain-data-pipeline .
 
-# Run — output stays inside container
+# Run — output written to /app inside the container (ephemeral)
 docker run --rm domain-data-pipeline
 
-# Run with volume mount — persists output files to ./output/
+# Run with volume mount — the pipeline writes all output files to its
+# working directory (/app inside the container), so mounting a host
+# directory there causes raw_orders.json, clean_orders.csv, and
+# orders.db to be written directly to ./output/ on the host.
 mkdir -p output
 docker run --rm -v $(pwd)/output:/app domain-data-pipeline
 ```
