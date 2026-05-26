@@ -1,0 +1,9 @@
+.env
+.git
+.github
+raw_orders.json
+clean_orders.csv
+orders.db
+__pycache__/
+*.pyc
+output/
